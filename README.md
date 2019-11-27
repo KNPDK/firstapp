@@ -56,7 +56,7 @@ docker ps
 2. Wybieramy nazwę kontenera NAMES w tym wypadku firstapp i piszemy:
 
 ```
-docker exex -it firstapp bash
+docker exec -it firstapp bash
 ```
 Jesteśmy zalogowani do kontenera naszej apki. Teraz sprawdzamy przykładowo:
 ```
