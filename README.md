@@ -48,3 +48,25 @@ docker-compose stop
 docker-compose up --no-start
 docker-copmpose start
 ```
+Wszystkie polecenia zwiazane z instalacją np z npm-a trzeba klepać bezpośrednio z kontenera. Aby sie tam wbić:
+1. Wyswielamy listę uruchomionych kontenerów.
+```
+docker ps
+```
+2. Wybieramy nazwę kontenera NAMES w tym wypadku firstapp i piszemy:
+
+```
+docker exex -it firstapp bash
+```
+Jesteśmy zalogowani do kontenera naszej apki. Teraz sprawdzamy przykładowo:
+```
+npm -v
+```
+oraz
+```
+node -v
+```
+Wychodzimy
+```
+exit
+```
