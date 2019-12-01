@@ -1,21 +1,15 @@
-const http = require('http');
+const db_config = require('./config/db_config')
+const server_config = require('./config/server_config')
+const hostname = server_config.host
+const port = server_config.port
+const express = require('express')
+const app = express()
 
-const hostname = '0.0.0.0';
-const port = 3000;
+app.get('/', (req, res) => {
+    res.send({msg: 'Hello 5 koło'})
+})
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.write('<html>');
-    res.write('<head><title>First app</title><head>');
-    res.write('<body>Hello world</body>');
-    res.write('</html>');
-    return res.end();
-});
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-// test jezz
-// test adrian
-// test pawelek
