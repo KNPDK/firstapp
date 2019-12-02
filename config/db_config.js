@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-var host = 'localhost'
+var host = process.env.MONGO_URL || 'localhost'
 var port = 27017
 var db_name = ''
 var url

@@ -5,7 +5,9 @@
   "author": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "MONGO_URL=localhost node app.js",
+    "prod": "MONGO_URL=mongo node app.js"
   },
   "dependencies": {
     "express": "^4.17.1",
