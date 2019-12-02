@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongodbClient = require('mongodb').MongoClient
 
 console.log('Connection url => ', process.env.MONGO_URL);
 var host = process.env.MONGO_URL || 'localhost'
@@ -9,10 +9,9 @@ var options = {
     useUnifiedTopology: true
 }
 
-console.log(`mongodb://root:root@${host}:${port}/${db_name}`)
 
-mongoose.connect(`mongodb://root:root@${host}:${port}/${db_name}`, options).then(
-    () => { console.log('Database connection success.') }
+mongodbClient.connect(`mongodb://root:root@${host}:${port}/${db_name}`).then(
+    () => { console.log('Database connection success.')}
 ).catch(
-    (err) => { console.log(err) }
+    (err) => {console.log(err)}
 )
