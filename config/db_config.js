@@ -1,15 +1,19 @@
-const mongoose = require('mongoose')
+const mongodbClient = require('mongodb').MongoClient
 
-var host = 'localhost'
+var host = process.env.MONGO_URL || 'localhost'
 var port = 27017
-var db_name = ''
-var url
-var options = {
-    useNewUrlParser: true
-}
+var db_name = 'firstapp_db'
 
-mongoose.connect(`mongodb://${host}:${port}/${db_name}`).then(
-    () => { console.log('Database connection success.') }
+
+mongodbClient.connect(`mongodb://root:root@${host}:${port}/${db_name}?useUnifiedTopology=true`).then(
+    () => { 
+        process.stdout.write('Database connection: ')
+        console.log("\x1b[32m", 'OK', "\x1b[37m")
+    }
 ).catch(
-    (err) => { console.log(err) }
+    (err) => {
+         process.stdout.write('Database connection: ')
+         console.log("\x1b[31m", 'Fail', "\x1b[37m")
+         console.log(err)
+    }
 )
