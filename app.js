@@ -4,7 +4,7 @@ const hostname = server_config.host;
 const port = server_config.port;
 const express = require('express');
 const app = express()
-const errorsController = require('./controller/errors');
+// todo: const errorsController = require('./controller/errors');
 const productsController = require('./controller/products');
 
 app.get('/', (req, res) => {
