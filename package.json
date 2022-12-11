@@ -10,7 +10,7 @@
     "prod": "MONGO_URL=mongo node app.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.3.5"
   }
 }
